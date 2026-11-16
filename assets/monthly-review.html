@@ -1,0 +1,64 @@
+<article id="monthly-review">
+<p class="text-muted">人生公会 · 月报样稿 · 示例数据</p>
+<h1>2026 年 10 月</h1>
+<section><h2>本月一句话</h2><p>作品集完成初稿，也找到了适合自己的学习安排。</p></section>
+<section><h2>这个月做了什么</h2><p>日期上汇总计划和健康里当天已有的标记。同一天有多个标记时，全部保留。</p>
+<div class="viz-row legend"><span>⭐ 重要事项</span><span>🙂 探索</span><span class="deadline">DDL 截止日期</span><span>🏋️ 健身</span><span>🍽️ 大餐</span><span>🌸 经期</span></div>
+<div class="month" id="monthly-calendar" aria-label="2026年10月记录日历"></div>
+<div class="card" id="monthly-detail" aria-live="polite"></div>
+</section>
+<section><h2>项目与里程碑</h2><p>作品集从整理素材推进到初稿。下一步是根据反馈修改。</p><div class="viz-row"><span class="phase">上旬 · 整理素材</span><span aria-hidden="true">→</span><span class="phase">中旬 · 撰写分析</span><span aria-hidden="true">→</span><span class="phase">下旬 · 完成初稿</span></div></section>
+<section><h2>时间用在哪里</h2><p>本月记录了 40 小时净学习时间，其中一半用在作品集上。</p>
+<div class="allocation"><svg viewBox="0 0 120 120" role="img" aria-label="40小时，作品集20小时，课程学习12小时，App修订8小时"><g transform="rotate(-90 60 60)" fill="none" stroke-width="16"><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-1)" stroke-dasharray="50 50"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-2)" stroke-dasharray="30 70" stroke-dashoffset="-50"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-3)" stroke-dasharray="20 80" stroke-dashoffset="-80"/></g><text x="60" y="65" text-anchor="middle" fill="currentColor">40 h</text></svg><div><p>作品集 · 20 小时 · 50%</p><p>课程学习 · 12 小时 · 30%</p><p>App 修订 · 8 小时 · 20%</p></div></div>
+</section>
+<section><h2>生活回顾</h2><div class="viz-grid"><div class="card viz-stat">饮食有记录<div class="viz-stat-value">18 天</div></div><div class="card viz-stat">收入有记录<div class="viz-stat-value">4 天</div></div><div class="card viz-stat">感恩日记<div class="viz-stat-value">6 篇</div></div></div><p>月中去看了一场展。月底的日记里，记下了完成初稿时的开心。</p></section>
+<section><h2>下月重点</h2><p class="text-muted">建议</p><ol><li>把初稿反馈整理成三条修改任务。</li><li>保留一段固定的学习时间，月底回顾它是否合适。</li></ol></section>
+</article>
+<style>
+#monthly-review section{padding-block:22px;border-bottom:1px solid var(--border);display:grid;gap:12px}
+#monthly-review .month{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}
+#monthly-review .month button{min-width:0;min-height:63px;padding:4px 0;display:grid;align-content:start;justify-items:center;gap:3px}
+#monthly-review .icons{display:flex;justify-content:center;flex-wrap:wrap;gap:0 2px}
+#monthly-review .deadline,#monthly-review .phase{background:var(--accent);color:var(--accent-foreground);padding:2px 5px;border-radius:5px}
+#monthly-review .legend{gap:6px 12px}
+#monthly-review .allocation{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+#monthly-review .allocation svg{width:125px}
+#monthly-review .allocation p{margin-block:5px}
+#monthly-review #monthly-detail p{margin-top:6px}
+</style>
+<script>
+(()=>{
+const labels={important:['⭐','重要事项'],explore:['🙂','探索'],deadline:['DDL','截止日期'],workout:['🏋️','健身'],meal:['🍽️','大餐'],period:['🌸','经期']};
+const records={
+  3:[['workout','力量训练']],
+  7:[['important','整理作品集结构'],['workout','力量训练']],
+  12:[['period','经期记录']],
+  13:[['period','经期记录']],
+  17:[['explore','去看展'],['meal','和朋友聚餐']],
+  21:[['workout','健身']],
+  28:[['important','完成作品集初稿'],['deadline','提交初稿'],['workout','力量训练'],['meal','庆祝聚餐']],
+  31:[['important','回看本月进展']]
+};
+const root=document.getElementById('monthly-review'),calendar=root.querySelector('#monthly-calendar'),detail=root.querySelector('#monthly-detail'),buttons=[];
+const make=(tag,text)=>{const element=document.createElement(tag);element.textContent=text;return element};
+for(const name of ['一','二','三','四','五','六','日']) calendar.append(make('span',name));
+for(let i=0;i<3;i++)calendar.append(make('span',''));
+for(let day=1;day<=31;day++){
+  const entries=records[day]||[],button=make('button','');
+  button.type='button';button.className='btn';
+  button.setAttribute('aria-label','10月'+day+'日'+(entries.length?'，'+entries.map(([type])=>labels[type][1]).join('、'):'，无标记'));
+  const number=make('span',String(day)),icons=make('span','');
+  if(entries.some(([type])=>type==='deadline'))number.className='deadline';
+  icons.className='icons';icons.setAttribute('aria-hidden','true');
+  for(const [type] of entries)if(type!=='deadline')icons.append(make('span',labels[type][0]));
+  button.append(number,icons);buttons.push(button);calendar.append(button);
+  button.onclick=()=>{
+    for(const other of buttons)other.setAttribute('aria-pressed',String(other===button));
+    detail.replaceChildren(make('h3','10月'+day+'日'));
+    for(const [type,note] of entries)detail.append(make('p',labels[type].join(' ')+' · '+note));
+    if(!entries.length)detail.append(make('p','这一天没有添加图标。'));
+  };
+}
+buttons[27].click();
+})();
+</script>
