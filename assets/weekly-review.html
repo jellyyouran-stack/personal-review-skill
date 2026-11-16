@@ -1,0 +1,59 @@
+<article id="weekly-review">
+<p class="text-muted">人生公会 · 周报样稿 · 示例数据</p>
+<h1>11月9日—15日</h1>
+<section><h2>本周一句话</h2><p>作品集完成第一版，App 的交互也做完了一轮修订。</p>
+<div class="viz-grid"><div class="card viz-stat"><span>净学习时长</span><div class="viz-stat-value">24 小时</div></div><div class="card viz-stat"><span>A 级步骤</span><div class="viz-stat-value">8 / 12</div></div><div class="card viz-stat"><span>有记录的日期</span><div class="viz-stat-value">7 天</div></div></div></section>
+<section><h2>周一到周日做了什么</h2><p>工作日集中推进作品集。周末去了看展，周日做了回顾。</p>
+<div class="week" id="weekly-days"></div><p id="weekly-detail" aria-live="polite"></p></section>
+<section><h2>项目推进</h2><p>作品集从整理结构走到第一版，下一步是修改。App 已完成交互修订，待真机验证。</p>
+<div class="timeline" aria-label="项目推进日期"><span></span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+<span>作品集</span><b class="project mark" style="grid-column:span 5">整理到第一版</b><span></span><span></span>
+<span>App</span><span></span><span></span><b class="study mark" style="grid-column:span 3">交互修订</b><span></span><span></span></div>
+<p class="text-small text-muted">横条表示有推进记录的日期范围。</p></section>
+<section><h2>时间去向</h2><p>有起止时间的学习记录里，一半用在作品集上。</p>
+<div class="allocation"><svg viewBox="0 0 120 120" role="img" aria-label="总计24小时，作品集50%，App修订25%，课程学习25%"><g transform="rotate(-90 60 60)" fill="none" stroke-width="16"><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-1)" stroke-dasharray="50 50"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-2)" stroke-dasharray="25 75" stroke-dashoffset="-50"/><circle cx="60" cy="60" r="44" pathLength="100" stroke="var(--viz-series-3)" stroke-dasharray="25 75" stroke-dashoffset="-75"/></g><text x="60" y="65" text-anchor="middle" fill="currentColor">24 h</text></svg>
+<div class="allocation-labels"><p><i></i>作品集 · 12 小时 · 50%</p><p><i></i>App 修订 · 6 小时 · 25%</p><p><i></i>课程学习 · 6 小时 · 25%</p></div></div></section>
+<section><h2>生活回顾</h2><p>周六去看了展。周日的感恩日记里，记下了完成作品集第一版的开心。</p><div class="viz-grid"><div class="card viz-stat">饮食记录<div class="viz-stat-value">5 / 7 天</div></div><div class="card viz-stat">阅读打卡<div class="viz-stat-value">5 / 7 天</div></div><div class="card viz-stat">感恩日记<div class="viz-stat-value">3 篇</div></div></div><p>来财 · 有 2 天录入收入</p></section>
+<section><h2>下周重点</h2><p class="text-muted">建议</p><ol><li>对照反馈，先改作品集里最重要的一处。</li><li>在 iPhone 上走通一次记录、编辑和保存。</li><li>继续记录学习时段和休息时间。</li></ol></section>
+</article>
+<style>
+#weekly-review{--project:color-mix(in srgb,var(--viz-series-1) 22%,var(--background));--study:color-mix(in srgb,var(--viz-series-2) 22%,var(--background));--life:color-mix(in srgb,var(--viz-series-3) 22%,var(--background));--explore:color-mix(in srgb,var(--viz-series-4) 22%,var(--background));--review:color-mix(in srgb,var(--viz-series-5) 22%,var(--background))}
+#weekly-review section{padding-block:calc(var(--font-size-base,14px)*1.5);border-bottom:1px solid var(--border);display:grid;gap:calc(var(--font-size-base,14px)*.75)}
+#weekly-review .week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+#weekly-review .day{display:grid;align-content:start;gap:5px;min-width:0}
+#weekly-review .mark{display:block;padding:5px 7px;border-radius:7px;font-weight:500;color:var(--foreground)}
+#weekly-review .project{background:var(--project)}#weekly-review .study{background:var(--study)}#weekly-review .life{background:var(--life)}#weekly-review .explore{background:var(--explore)}#weekly-review .review{background:var(--review)}
+#weekly-review .timeline{display:grid;grid-template-columns:auto repeat(7,minmax(0,1fr));gap:6px;align-items:center;text-align:center}
+#weekly-review .allocation{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+#weekly-review .allocation svg{width:125px;display:block}
+#weekly-review .allocation-labels p{margin-block:5px}
+#weekly-review .allocation-labels i{display:inline-block;width:10px;height:10px;margin-inline-end:7px;background:var(--viz-series-1);border-radius:50%}
+#weekly-review .allocation-labels p:nth-child(2) i{background:var(--viz-series-2)}#weekly-review .allocation-labels p:nth-child(3) i{background:var(--viz-series-3)}
+#weekly-review li+li{margin-top:8px}
+@media(max-width:680px){#weekly-review .week{grid-template-columns:1fr}#weekly-review .day{grid-template-columns:minmax(75px,auto) 1fr 1fr;align-items:stretch}}
+</style>
+<script>
+(()=>{
+const entries=[
+['一','5 小时',['project','项目 · 整理作品集'],['study','学习 · 关卡分析']],
+['二','4 小时',['project','项目 · 截图标注'],['life','生活 · 采购鲜花']],
+['三','6 小时',['project','项目 · 撰写分析'],['study','学习 · 案例阅读']],
+['四','4 小时',['project','项目 · 修改交互'],['life','生活 · 运动']],
+['五','5 小时',['project','项目 · 完成第一版'],['review','复盘 · 整理反馈']],
+['六','学习时长未记录',['explore','探索 · 看展'],['explore','探索 · 城市散步']],
+['日','学习时长未记录',['review','复盘 · 本周回顾'],['life','生活 · 感恩日记']]
+];
+const root=document.getElementById('weekly-review');
+const detail=root.querySelector('#weekly-detail');
+const buttons=[];
+entries.forEach(([day,hours,...items],i)=>{
+const tile=document.createElement('div');tile.className='day';
+const button=document.createElement('button');button.type='button';button.className='btn';button.textContent='周'+day+' '+(9+i)+'日';
+button.addEventListener('click',()=>{buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));detail.textContent='周'+day+' · '+hours+' ｜ '+items.map(x=>x[1]).join('、')});
+buttons.push(button);tile.append(button);
+for(const [category,label] of items){const mark=document.createElement('span');mark.className='mark '+category;mark.textContent=label;tile.append(mark)}
+root.querySelector('#weekly-days').append(tile);
+});
+buttons[0].click();
+})();
+</script>
