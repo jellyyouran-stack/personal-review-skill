@@ -1,0 +1,58 @@
+<article id="daily-review">
+  <p class="text-muted">人生公会 · 日报样稿 · 示例数据</p>
+  <h1>11月16日 · 周一</h1>
+  <section>
+    <h2>今天最值得记住的一件事</h2>
+    <p>完成了关卡分析初稿，把零散的截图和笔记整理成了一份可以修改的作品集稿件。</p>
+    <div class="viz-grid">
+      <div class="card viz-stat">净学习<div class="viz-stat-value">4 小时</div></div>
+      <div class="card viz-stat">完成 A 级步骤<div class="viz-stat-value">2 步</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>今天的时间去哪了</h2>
+    <p>已记录的 4 小时里，3 小时用在作品集，1 小时用在课程学习。</p>
+    <div class="split" role="img" aria-label="作品集占净学习时间75%，课程学习占25%"><span></span><span></span></div>
+    <div class="viz-row"><span class="key project">作品集 · 3 小时</span><span class="key course">课程学习 · 1 小时</span></div>
+    <details><summary>查看三段学习记录</summary>
+      <p>09:30–12:00 · 作品集 · 休息 30 分钟 · 净学 2 小时</p>
+      <p>14:00–15:00 · 作品集 · 净学 1 小时</p>
+      <p>15:15–16:15 · 课程学习 · 净学 1 小时</p>
+    </details>
+  </section>
+  <section>
+    <h2>今天做了什么</h2>
+    <ul class="day-list">
+      <li><span class="key project">⭐ 重要事项</span><span>整理结构、补齐截图，完成关卡分析初稿。</span></li>
+      <li><span class="key course">📖 学习</span><span>看完一节课程，记下一个可用在作品集里的案例。</span></li>
+      <li><span class="key life">🏋️ 健身</span><span>完成一次力量训练。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h2>生活记录</h2>
+    <div class="viz-grid">
+      <div class="card viz-stat">已记录饮食<div class="viz-stat-value">1,560 kcal</div><p>蛋白质 90 g</p></div>
+      <div class="card viz-stat">今日来财<div class="viz-stat-value">待定</div><p>尚无收入记录</p></div>
+    </div>
+    <details><summary>感恩日记摘录</summary><p>「看到零散的笔记终于变成一份完整的稿子，我挺开心的。」</p></details>
+  </section>
+  <section>
+    <h2>明天的第一步</h2>
+    <p><span class="key project">已安排</span> 给关卡分析初稿补一张流程图。</p>
+    <p><span class="key life">建议</span> 开始前先圈出图里最想说明的一个设计取舍。</p>
+  </section>
+</article>
+<style>
+#daily-review{--project:color-mix(in srgb,var(--viz-series-1) 18%,var(--background));--course:color-mix(in srgb,var(--viz-series-2) 18%,var(--background));--life:color-mix(in srgb,var(--viz-series-3) 18%,var(--background))}
+#daily-review section{display:grid;gap:12px;padding-block:22px;border-bottom:1px solid var(--border)}
+#daily-review .split{display:flex;gap:3px;overflow:hidden;border-radius:6px;height:16px}
+#daily-review .split span:first-child{flex:3;background:var(--viz-series-1)}
+#daily-review .split span:last-child{flex:1;background:var(--viz-series-2)}
+#daily-review .key{display:inline-block;padding:3px 8px;border-radius:6px}
+#daily-review .project{background:var(--project)}
+#daily-review .course{background:var(--course)}
+#daily-review .life{background:var(--life)}
+#daily-review .day-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+#daily-review .day-list li{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 10px}
+#daily-review details p{margin-top:8px}
+</style>
